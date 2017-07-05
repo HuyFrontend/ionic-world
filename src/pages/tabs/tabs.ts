@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 import { NewsPage } from '../news/news';
-
+import { Tabs } from 'ionic-angular';
 @Component({
   templateUrl: 'tabs.html'
 })
@@ -18,4 +18,11 @@ export class TabsPage {
   constructor() {
 
   }
+  @ViewChild('myTabs') tabRef: Tabs;
+  
+  ionViewDidEnter() {
+  	// choose active tab when open app
+	  this.tabRef.select(2);
+	};
+	
 }
